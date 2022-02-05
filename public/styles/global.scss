@@ -1,11 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Prompt:wght@100;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600;700;800&family=Prompt:wght@100;400;700&family=Roboto:wght@100;300;400;500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Prompt:wght@100;400;700&family=Roboto:wght@100;300;400;500&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-size: 10px;
-  transition: all 0.3s;
+  transition: all 0.3s linear;
 }
 
 ul {
@@ -87,14 +87,54 @@ header {
 
 // --- RESPONSIVO ---
 @media (max-width: 768px) {
-  header {
-    #menu-btn {
-      font-size: 3rem;
-      color: var(--primary-color);
-      cursor: pointer;
-      display: inline-block;
-      visibility: visible;
+  header #menu-btn {
+    font-size: 3rem;
+    color: var(--primary-color);
+    cursor: pointer;
+    display: inline-block;
+    visibility: visible;
+
+    .fa-times {
+      -webkit-transform: rotate(180deg);
+      transform: rotate(180deg);
     }
-  
-}
+  }
+  .navigation-bar {
+    display: none;
+  }
+  .navigation-bar.active {
+    display: inline-block;
+
+    .navigation-list {
+      position: absolute;
+      top: 99%;
+      left: 2rem;
+      right: 0;
+      flex-direction: column;
+
+      li {
+        margin-top: 4rem;
+        display: block;
+        position: relative;
+        a {
+          font-weight: 400;
+        }
+        &::before {
+          content: "";
+          width: 100%;
+          height: 1px;
+          background: var(--primary-color);
+          position: absolute;
+          bottom: -1rem;
+        }
+
+        .button {
+          padding: 0;
+          background: transparent;
+          font-size: 2rem;
+          font-weight: 700;
+        }
+      }
+    }
+  }
 }

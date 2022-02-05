@@ -1,24 +1,19 @@
 const express = require("express");
+const Routers = require("./routers/routers")
+const port = 3000;
+
+const tool1 = require('./tools/consoleUpdate')
+
 var app = express();
-
+var dat = {
+  "uploads":0,
+  "requests":0,
+  "downloads":0,
+}
 app.set("view engine", "ejs");
-
 app.use(express.static("public"));
 
-//criando uma rota
-app.get("/", function (req, res) {
-  res.render("pages/index");
-});
-
-app.get("/sobre", function (req, res) {
-  res.render("pages/about");
-});
-
-app.get("/contato", function (req, res) {
-  res.render("pages/contact");
-});
-
+app.use('/' , Routers.router)
 //fica ouvindo a porta
-app.listen(3000);
+app.listen(port,tool1.consolreload(port,Routers.dat));
 
-console.log("Rodando");

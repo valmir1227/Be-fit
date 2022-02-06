@@ -1,10 +1,7 @@
-
-function storageData(obj,FileName,dat){
+function storageData(obj,dataPath,dat,callback){
     const fs = require('fs')
     var obj1 = obj;
-
-    
-    fs.readFile('../data/'+FileName,{flag: 'a+',encoding:'utf-8'} , (err,data) =>{
+    fs.readFile(dataPath,{flag: 'a+',encoding:'utf-8'} , (err,data) =>{
         if(err){
             console.log(err)
             console.log(data)
@@ -14,13 +11,15 @@ function storageData(obj,FileName,dat){
             }   
             obj1.table.push(dat)
             json = JSON.stringify(obj1,null,2);
-            fs.writeFile('../data/' + FileName ,json,'utf-8' , () => {
-                return console.log("Dados Armazendaos com sucesso")
+            fs.writeFile(dataPath ,json,'utf-8' , () => {
+                return 
             });
         }
     })
+    if(callback){
+       callback()
+    }
 }
-
 module.exports = {
     storageData
 };

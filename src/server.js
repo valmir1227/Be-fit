@@ -1,19 +1,17 @@
 const express = require("express");
-const Routers = require("../routers/routers")
+const app = express();
+const bodyParser = require('body-parser')
+const Routers = require("./routers/routers")
+const tool1 = require('./tools/consoleUpdate')
 const port = 3000;
 
-const tool1 = require('./tools/consoleUpdate')
-
-var app = express();
-var dat = {
-  "uploads":0,
-  "requests":0,
-  "downloads":0,
-}
-app.set("view engine", "ejs");
+app.use(express.json())
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
 app.use(express.static("public"));
 
-app.use('/' , Routers.router)
-//fica ouvindo a porta
-app.listen(port,tool1.consolreload(port,Routers.dat));
+app.set("view engine", "ejs");
 
+app.use('/' , Routers.router)
+
+app.listen(port,tool1.consolreload(port,Routers.dat));

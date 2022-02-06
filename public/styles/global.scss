@@ -5,7 +5,7 @@
   padding: 0;
   box-sizing: border-box;
   font-size: 10px;
-  transition: all 0.3s linear;
+  transition: all 0.2s linear;
 }
 
 ul {
@@ -18,13 +18,13 @@ a {
 
 :root {
   --primary-color: #ed3237;
+  --swiper-theme-color: var(--primary-color);
   --hover-color: #0e273c;
   --ligth-text-color: #ede7d9;
   --dark-text-color: #110b11;
 }
 
 body {
-  background: rgb(46, 46, 46);
   font-family: "Montserrat", sans-serif;
 }
 
@@ -70,17 +70,51 @@ header {
         &:hover {
           color: #ed3237;
         }
+        &:active {
+          color: var(--primary-color);
+        }
       }
       .button {
-        padding: 1.5rem 2rem;
-        background-color: #ed3237;
+        padding: 1.2rem 1.6rem;
+        background: var(--primary-color);
         border-radius: 30px;
+        border: 2px solid var(--primary-color);
 
         &:hover {
-          background: var(--hover-color);
+          background: transparent;
           color: var(--ligth-text-color);
         }
       }
+    }
+  }
+}
+
+.home {
+  width: 100%;
+  height: 100vh;
+
+  .swiper {
+    width: 100%;
+    height: 100%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      background-position: left;
+    }
+
+    .swiper-horizontal > .swiper-pagination-progressbar,
+    .swiper-pagination-progressbar.swiper-pagination-horizontal,
+    .swiper-pagination-progressbar.swiper-pagination-vertical.swiper-pagination-progressbar-opposite,
+    .swiper-vertical
+      > .swiper-pagination-progressbar.swiper-pagination-progressbar-opposite {
+      width: 10%;
+      height: 6px;
+      text-align: center;
+      top: 99%;
+      left: 50%;
+      transform: translateX(-50%);
     }
   }
 }

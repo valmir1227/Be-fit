@@ -6,8 +6,8 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-size: 10px;
-  -webkit-transition: all 0.3s linear;
-  transition: all 0.3s linear;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
 }
 
 ul {
@@ -20,13 +20,13 @@ a {
 
 :root {
   --primary-color: #ed3237;
+  --swiper-theme-color: var(--primary-color);
   --hover-color: #0e273c;
   --ligth-text-color: #ede7d9;
   --dark-text-color: #110b11;
 }
 
 body {
-  background: #2e2e2e;
   font-family: "Montserrat", sans-serif;
 }
 
@@ -85,15 +85,52 @@ header .navigation-bar .navigation-list li a:hover {
   color: #ed3237;
 }
 
+header .navigation-bar .navigation-list li a:active {
+  color: var(--primary-color);
+}
+
 header .navigation-bar .navigation-list li .button {
-  padding: 1.5rem 2rem;
-  background-color: #ed3237;
+  padding: 1.2rem 1.6rem;
+  background: var(--primary-color);
   border-radius: 30px;
+  border: 2px solid var(--primary-color);
 }
 
 header .navigation-bar .navigation-list li .button:hover {
-  background: var(--hover-color);
+  background: transparent;
   color: var(--ligth-text-color);
+}
+
+.home {
+  width: 100%;
+  height: 100vh;
+}
+
+.home .swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.home .swiper img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  background-position: left;
+}
+
+.home .swiper .swiper-horizontal > .swiper-pagination-progressbar,
+.home .swiper .swiper-pagination-progressbar.swiper-pagination-horizontal,
+.home .swiper .swiper-pagination-progressbar.swiper-pagination-vertical.swiper-pagination-progressbar-opposite,
+.home .swiper .swiper-vertical
+> .swiper-pagination-progressbar.swiper-pagination-progressbar-opposite {
+  width: 10%;
+  height: 6px;
+  text-align: center;
+  top: 99%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 
 @media (max-width: 768px) {

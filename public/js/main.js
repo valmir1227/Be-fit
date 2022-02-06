@@ -20,4 +20,12 @@ var swiper = new Swiper(".mySwiper", {
   autoplay: {
     delay: 5000,
   },
+  direction: "horizontal",
+  pagination: {
+    clickable: true,
+  },
+  effect: "fade",
+  fadeEffect: {
+    crossFade: false,
+  },
 });

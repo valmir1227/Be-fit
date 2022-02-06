@@ -174,10 +174,6 @@ header .navigation-bar .navigation-list li .button:hover {
     display: inline-block;
     visibility: visible;
   }
-  header #menu-btn .fa-times {
-    -webkit-transform: rotate(180deg);
-    transform: rotate(180deg);
-  }
   .navigation-bar {
     display: none;
   }
@@ -186,13 +182,22 @@ header .navigation-bar .navigation-list li .button:hover {
   }
   .navigation-bar.active .navigation-list {
     position: absolute;
+    height: 43rem;
     top: 99%;
-    left: 2rem;
+    left: 0;
     right: 0;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    border-bottom: 3px solid var(--dark-text-color);
+    /* From https://css.glass */
+    /* From https://css.glass */
+    background: rgba(0, 0, 0, 0.63);
+    -webkit-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    -webkit-backdrop-filter: blur(3.5px);
+            backdrop-filter: blur(3.5px);
   }
   .navigation-bar.active .navigation-list li {
     margin-top: 4rem;
@@ -215,6 +220,17 @@ header .navigation-bar .navigation-list li .button:hover {
     background: transparent;
     font-size: 2rem;
     font-weight: 700;
+    border: none;
+  }
+  .navigation-bar.active .navigation-list li .button:hover {
+    color: var(--primary-color);
+  }
+  .home .swiper .swiper-text p {
+    font-size: 2.5rem;
+  }
+  .home .swiper .swiper-text h1 {
+    font-size: 6rem;
+    line-height: 6rem;
   }
 }
 /*# sourceMappingURL=global.css.map */

@@ -156,11 +156,6 @@ header {
     cursor: pointer;
     display: inline-block;
     visibility: visible;
-
-    .fa-times {
-      -webkit-transform: rotate(180deg);
-      transform: rotate(180deg);
-    }
   }
   .navigation-bar {
     display: none;
@@ -170,10 +165,17 @@ header {
 
     .navigation-list {
       position: absolute;
+      height: 43rem;
       top: 99%;
-      left: 2rem;
+      left: 0;
       right: 0;
       flex-direction: column;
+      border-bottom: 3px solid var(--dark-text-color);
+      /* From https://css.glass */
+      /* From https://css.glass */
+      background: rgba(0, 0, 0, 0.63);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(3.5px);
 
       li {
         margin-top: 4rem;
@@ -196,6 +198,24 @@ header {
           background: transparent;
           font-size: 2rem;
           font-weight: 700;
+          border: none;
+
+          &:hover {
+            color: var(--primary-color);
+          }
+        }
+      }
+    }
+  }
+  .home {
+    .swiper {
+      .swiper-text {
+        p {
+          font-size: 2.5rem;
+        }
+        h1 {
+          font-size: 6rem;
+          line-height: 6rem;
         }
       }
     }

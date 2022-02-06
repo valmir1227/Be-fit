@@ -1,5 +1,5 @@
 const express = require("express");
-const Routers = require("./routers/routers")
+const Routers = require("../routers/routers")
 const port = 3000;
 
 const tool1 = require('./tools/consoleUpdate')

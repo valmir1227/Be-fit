@@ -1,10 +1,12 @@
 {
   "name": "be-fit",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "license": "MIT",
   "scripts": {
-    "dev":"nodemon src/server.js" 
+    "dev": "sucrase-node src/server.ts",
+    "build":"sucrase src/ -d ./dist --transforms typescript,imports",
+    "start":"node ./dist/server.js"
   },
   "dependencies": {
     "body-parser": "^1.19.1",
@@ -12,6 +14,9 @@
     "express": "^4.17.2"
   },
   "devDependencies": {
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.15",
+    "sucrase": "^3.20.3",
+    "tsc": "^2.0.4",
+    "typescript": "^4.5.5"
   }
 }

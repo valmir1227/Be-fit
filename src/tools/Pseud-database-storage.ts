@@ -10,8 +10,8 @@ function storageData(obj,dataPath,dat,callback){
                 obj1 = JSON.parse(data)
             }   
             obj1.table.push(dat)
-            json = JSON.stringify(obj1,null,2);
-            fs.writeFile(dataPath ,json,'utf-8' , () => {
+            data = JSON.stringify(obj1,null,2);
+            fs.writeFile(dataPath ,data,'utf-8' , () => {
                 return 
             });
         }

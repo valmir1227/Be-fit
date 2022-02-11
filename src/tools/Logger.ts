@@ -2,7 +2,7 @@ const Logger = class Logger {
     date = new Date(Date.now())
 
     getDateLog(){
-        return `${this.date.getFullYear()}-${this.date.getMonth() + 1 < 10? "0" + `${this.date.getMonth() + 1}` : this.date.getMonth() + 1}-${this.date.getDay() < 10? "0" + `${this.date.getDay()}`: this.date.getDay()}`;
+        return `${this.date.getFullYear()}-${this.date.getMonth() + 1 < 10? "0" + `${this.date.getMonth() + 1}` : this.date.getMonth() + 1}-${this.date.getDate() < 10? "0" + `${this.date.getDate()}`: this.date.getDate()}`;
     }
     getClockLog(){
         return `${this.date.getHours()}:${this.date.getMinutes()}:${this.date.getSeconds() < 10? "0" + `${this.date.getSeconds()}`: this.date.getSeconds() }`

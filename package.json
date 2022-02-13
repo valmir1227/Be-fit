@@ -4,16 +4,20 @@
   "main": "server.js",
   "license": "MIT",
   "scripts": {
-    "dev": "sucrase-node src/server.ts",
-    "build":"sucrase src/ -d ./dist --transforms typescript,imports",
-    "start":"node ./dist/server.js"
+    "dev": "sucrase-node app/server.ts",
+    "build": "sucrase ./app -d ./dist --transforms typescript,imports && cp -r ./app/public/* ./dist/public/ && cp  ./app/views/components/* -r ./dist/views/components/ && cp -r ./app/views/* ./dist/views/ ",
+    "start": "node ./dist/server.js"
   },
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "body-parser": "^1.19.1",
+    "dotenv": "^16.0.0",
     "ejs": "^3.1.6",
-    "express": "^4.17.2"
+    "express": "^4.17.2",
+    "jsonwebtoken": "^8.5.1"
   },
   "devDependencies": {
+    "@types/node": "^17.0.17",
     "nodemon": "^2.0.15",
     "sucrase": "^3.20.3",
     "tsc": "^2.0.4",

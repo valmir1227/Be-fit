@@ -111,20 +111,28 @@ header {
       height: auto;
       transform: translate(-50%, -50%);
       text-transform: uppercase;
+
       p {
         font-size: 3.5rem;
         letter-spacing: -1px;
         font-weight: 700;
         text-align: center;
         color: var(--primary-color);
-        margin-bottom: 2rem;
+
+        h1 {
+          text-align: center;
+          font-size: 7rem;
+          font-weight: 800;
+          color: var(--ligth-text-color);
+          line-height: 8rem;
+        }
       }
       h1 {
         text-align: center;
-        font-size: 8rem;
+        font-size: 7rem;
         font-weight: 800;
         color: var(--ligth-text-color);
-        line-height: 9rem;
+        line-height: 8rem;
       }
     }
     span {
@@ -138,11 +146,38 @@ header {
       letter-spacing: -1px;
       text-align: center;
 
-      i {
-        color: var(--ligth-text-color);
-        text-align: center;
-        font-size: 3rem;
-        margin-top: 1rem;
+      animation-delay: 5s;
+
+      animation: slowDownSpan 6s;
+      @keyframes slowDownSpan {
+        0% {
+          bottom: 10rem;
+          opacity: 0;
+        }
+        75% {
+          bottom: 10rem;
+          opacity: 0;
+        }
+        100% {
+          bottom: 4rem;
+          opacity: 1;
+        }
+      }
+    }
+
+    i {
+      color: var(--ligth-text-color);
+      text-align: center;
+      font-size: 3rem;
+      margin-top: .5rem;
+      animation: iconMovement 1.5s cubic-bezier(0, 1.89, 0, 1.89) infinite;
+      @keyframes iconMovement {
+        0% {
+          transform: translateY(0);
+        }
+        100% {
+          transform: translateY(20px);
+        }
       }
     }
   }
@@ -210,7 +245,7 @@ header {
   .home {
     .swiper {
       .swiper-text {
-        p {
+        .text-shine {
           font-size: 2.5rem;
         }
         h1 {

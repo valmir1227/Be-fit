@@ -135,15 +135,22 @@ header .navigation-bar .navigation-list li .button:hover {
   font-weight: 700;
   text-align: center;
   color: var(--primary-color);
-  margin-bottom: 2rem;
+}
+
+.home .swiper .swiper-text p h1 {
+  text-align: center;
+  font-size: 7rem;
+  font-weight: 800;
+  color: var(--ligth-text-color);
+  line-height: 8rem;
 }
 
 .home .swiper .swiper-text h1 {
   text-align: center;
-  font-size: 8rem;
+  font-size: 7rem;
   font-weight: 800;
   color: var(--ligth-text-color);
-  line-height: 9rem;
+  line-height: 8rem;
 }
 
 .home .swiper span {
@@ -157,13 +164,71 @@ header .navigation-bar .navigation-list li .button:hover {
   font-size: 2rem;
   letter-spacing: -1px;
   text-align: center;
+  -webkit-animation-delay: 5s;
+          animation-delay: 5s;
+  -webkit-animation: slowDownSpan 6s;
+          animation: slowDownSpan 6s;
 }
 
-.home .swiper span i {
+@-webkit-keyframes slowDownSpan {
+  0% {
+    bottom: 10rem;
+    opacity: 0;
+  }
+  75% {
+    bottom: 10rem;
+    opacity: 0;
+  }
+  100% {
+    bottom: 4rem;
+    opacity: 1;
+  }
+}
+
+@keyframes slowDownSpan {
+  0% {
+    bottom: 10rem;
+    opacity: 0;
+  }
+  75% {
+    bottom: 10rem;
+    opacity: 0;
+  }
+  100% {
+    bottom: 4rem;
+    opacity: 1;
+  }
+}
+
+.home .swiper i {
   color: var(--ligth-text-color);
   text-align: center;
   font-size: 3rem;
-  margin-top: 1rem;
+  margin-top: .5rem;
+  -webkit-animation: iconMovement 1.5s cubic-bezier(0, 1.89, 0, 1.89) infinite;
+          animation: iconMovement 1.5s cubic-bezier(0, 1.89, 0, 1.89) infinite;
+}
+
+@-webkit-keyframes iconMovement {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+  }
+}
+
+@keyframes iconMovement {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+  }
 }
 
 @media (max-width: 768px) {
@@ -225,7 +290,7 @@ header .navigation-bar .navigation-list li .button:hover {
   .navigation-bar.active .navigation-list li .button:hover {
     color: var(--primary-color);
   }
-  .home .swiper .swiper-text p {
+  .home .swiper .swiper-text .text-shine {
     font-size: 2.5rem;
   }
   .home .swiper .swiper-text h1 {

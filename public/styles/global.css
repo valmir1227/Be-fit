@@ -10,6 +10,10 @@
   transition: all 0.2s linear;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 ul {
   list-style: none;
 }
@@ -21,13 +25,14 @@ a {
 :root {
   --primary-color: #ed3237;
   --swiper-theme-color: var(--primary-color);
-  --hover-color: #0e273c;
+  --hover-color: #232a35;
   --ligth-text-color: #ede7d9;
   --dark-text-color: #110b11;
 }
 
 body {
   font-family: "Montserrat", sans-serif;
+  background-color: #eeeeee;
 }
 
 header {
@@ -101,20 +106,20 @@ header .navigation-bar .navigation-list li .button:hover {
   color: var(--ligth-text-color);
 }
 
-.home {
+#home {
   width: 100%;
   height: 100vh;
   overflow: hidden;
 }
 
-.home .swiper {
+#home .swiper {
   width: 100%;
   height: 100%;
   -webkit-animation: zoom 15s linear;
           animation: zoom 15s linear;
 }
 
-.home .swiper img {
+#home .swiper img {
   display: block;
   width: 100%;
   height: 100%;
@@ -144,7 +149,7 @@ header .navigation-bar .navigation-list li .button:hover {
   }
 }
 
-.home .swiper .swiper-text {
+#home .swiper .swiper-text {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -154,7 +159,7 @@ header .navigation-bar .navigation-list li .button:hover {
   text-transform: uppercase;
 }
 
-.home .swiper .swiper-text p {
+#home .swiper .swiper-text p {
   font-size: 3.5rem;
   letter-spacing: -1px;
   font-weight: 700;
@@ -162,7 +167,7 @@ header .navigation-bar .navigation-list li .button:hover {
   color: var(--primary-color);
 }
 
-.home .swiper .swiper-text p h1 {
+#home .swiper .swiper-text p h1 {
   text-align: center;
   font-size: 7rem;
   font-weight: 800;
@@ -170,7 +175,7 @@ header .navigation-bar .navigation-list li .button:hover {
   line-height: 8rem;
 }
 
-.home .swiper .swiper-text h1 {
+#home .swiper .swiper-text h1 {
   text-align: center;
   font-size: 7rem;
   font-weight: 800;
@@ -178,7 +183,7 @@ header .navigation-bar .navigation-list li .button:hover {
   line-height: 8rem;
 }
 
-.home .swiper span {
+#home .swiper span {
   position: absolute;
   bottom: 5rem;
   left: 50%;
@@ -225,7 +230,7 @@ header .navigation-bar .navigation-list li .button:hover {
   }
 }
 
-.home .swiper i {
+#home .swiper i {
   color: var(--ligth-text-color);
   text-align: center;
   font-size: 3rem;
@@ -254,6 +259,107 @@ header .navigation-bar .navigation-list li .button:hover {
     -webkit-transform: translateY(15px);
             transform: translateY(15px);
   }
+}
+
+#classes {
+  width: 100%;
+  height: 100%;
+}
+
+#classes h2 {
+  text-transform: uppercase;
+  color: var(--primary-color);
+  text-align: center;
+  font-size: 3rem;
+  letter-spacing: -1px;
+  margin-top: 8rem;
+}
+
+#classes h1 {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 4rem;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+#classes .classes-container {
+  width: 100%;
+  height: 100%;
+  margin-top: 8rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 3rem;
+  margin-bottom: 8rem;
+}
+
+#classes .classes-container .classe {
+  width: 40.5rem;
+  height: 25rem;
+  cursor: pointer;
+  margin-bottom: 8rem;
+}
+
+#classes .classes-container .classe .classe-image {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#classes .classes-container .classe .classe-image img {
+  width: 100%;
+  height: 100%;
+  -webkit-filter: grayscale(1);
+          filter: grayscale(1);
+}
+
+#classes .classes-container .classe .text {
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+
+#classes .classes-container .classe .text span {
+  display: inline-block;
+  margin-top: 1rem;
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+#classes .classes-container .classe .text h3 {
+  font-size: 2rem;
+  text-transform: uppercase;
+  margin-top: 1.5rem;
+  padding-bottom: 2rem;
+  font-weight: 700;
+  color: var(--dark-text-color);
+}
+
+#classes .classes-container .classe:hover h3 {
+  color: var(--ligth-text-color);
+}
+
+#classes .classes-container .classe:hover .text {
+  background: var(--hover-color);
+}
+
+#classes .classes-container .classe:hover {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+}
+
+#classes .classes-container .classe:hover img {
+  -webkit-filter: grayscale(0);
+          filter: grayscale(0);
 }
 
 @media (max-width: 768px) {
@@ -291,6 +397,7 @@ header .navigation-bar .navigation-list li .button:hover {
   }
   .navigation-bar.active .navigation-list li {
     margin-top: 4rem;
+    margin-left: 4rem;
     display: block;
     position: relative;
   }

@@ -1,5 +1,5 @@
-# ACADEMIA BE-FIT
-⚠️ Projeto em construção
+# GYM BE-FIT
+⚠️ Project under construction
 
   ## 🖥️ DESKTOP
   
